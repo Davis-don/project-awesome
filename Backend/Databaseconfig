@@ -1,0 +1,15 @@
+const { Client } = require('pg');
+
+const configurations={
+    user: 'Davis',
+    host: 'winkywebus-9558.7tc.aws-eu-central-1.cockroachlabs.cloud',
+    database: 'winkywebus',
+    password: '8ZQgVVmZBvyUcsyXk8sS6A',
+    port: 26257, // Default CockroachDB port
+    ssl: {
+        rejectUnauthorized: false // Disable SSL for development
+    } 
+}
+
+
+module.exports=configurations;
