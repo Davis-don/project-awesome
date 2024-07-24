@@ -19,7 +19,7 @@ console.log(contactData);
     const handlePost=async (e)=>{
         e.preventDefault();
     try{
-    let response=await fetch ('http://localhost:4000/',{
+    let response=await fetch ('https://project-awesome-server.vercel.app',{
         method:'post',
         headers:{
             'content-type':'application/json'
