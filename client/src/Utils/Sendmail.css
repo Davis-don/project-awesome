@@ -1,0 +1,25 @@
+/* Extra small devices (phones, less than 576px) */
+@media (max-width: 575.98px) {/* Extra small devices (phones, less than 576px) */
+
+    .sendmail-overall-container{
+
+    }
+    .sendmail-contact-form-holder{
+padding: 20px;
+    }
+    .actual-contact-form{
+
+    }
+}
+@media (min-width: 575.98px){
+    .sendmail-overall-container{
+
+    }
+    .sendmail-contact-form-holder{
+width: 500px;
+margin: auto;
+    }
+    .actual-contact-form{
+
+    } 
+}
