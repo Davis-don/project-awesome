@@ -1,0 +1,13 @@
+.overall-post-component{
+
+}
+.Display-start{
+padding: 10px;
+background-color: black;
+}
+.Actual-message{
+    background-color: grey;
+    padding: 10px;
+    border-radius: 2px;
+    line-height: 5x;
+}

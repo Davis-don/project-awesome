@@ -1,0 +1,18 @@
+/* Extra small devices (phones, less than 576px) */
+@media (max-width: 575.98px) {/* Extra small devices (phones, less than 576px) */
+.readEmail-view-overall-container{
+
+}
+.emailing-header{
+padding: 20px;
+border-bottom: 1px solid black;
+}
+.actual-text-component{
+width: 80vw;
+margin: auto;
+padding: 10px;
+}
+.post-container{
+padding: 20px;
+}
+}
