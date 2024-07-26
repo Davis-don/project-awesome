@@ -22,7 +22,7 @@ console.log(contactData);
     const handlePost=async (e)=>{
         e.preventDefault();
     try{
-        const response= await fetch ('http://test-server-five-pink.vercel.app',{
+        const response= await fetch ('https://test-server-five-pink.vercel.app',{
         method:'post',
         headers:{
             'content-type':'application/json'
