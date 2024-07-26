@@ -10,7 +10,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 const corsOptions = {
-  origin: 'https://www.winkywebus.online', // Replace with your allowed origin or use a function for dynamic configuration
+  origin: 'https://project-awesome-client.vercel.app', // Replace with your allowed origin or use a function for dynamic configuration
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true, // Enable credentials (cookies, HTTP authentication) across domains
   optionsSuccessStatus: 204, // Set the response status for successful preflight requests
