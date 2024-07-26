@@ -11,11 +11,11 @@ const Post = ({ name, contact, email, message }) => {
           onClick={() => setShowMessage(!showMessage)} 
           className='Display-start text-light'
         >
-          <span><CgMail className='fs-2'/></span>
-          <span>{name}</span>
+          <span><CgMail className='fs-2 text-dark'/></span>
+          <span className='text-dark'>{name}</span>
         </div>
       ) : (
-        <div className='Actual-message bg-dark'>
+        <div className='Actual-message bg-dark p-4'>
           <p className='text-light'>Name: {name}</p>
           <p className='text-light'>Contact: {contact}</p>
           <p className='text-light'>Email: <small>{email}</small></p>

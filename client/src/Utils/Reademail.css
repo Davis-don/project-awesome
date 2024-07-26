@@ -16,3 +16,9 @@ padding: 10px;
 padding: 20px;
 }
 }
+@media (min-width: 575.98px) {
+    .readEmail-view-overall-container{
+width: 500px;
+margin: auto;
+    }
+}

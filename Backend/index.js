@@ -68,12 +68,29 @@ async function deleteTable() {
     console.error('Error deleting table:', err);
   }
 }
+
+
+
+async function getAllData() {
+  try {
+    const getAllDataQuery = 'SELECT * FROM Emails_tbl_awesome';
+    const result = await client.query(getAllDataQuery);
+    return result.rows; // Return all rows from the query result
+  } catch (err) {
+    console.error('Error retrieving data:', err);
+    throw err;
+  }
+}
+
+
+
+
 // Routes
 app.post('/', async (req, res) => {
   try {
-   // deleteTable()
+    //deleteTable()
    await createTable(); // Ensure the table exists
-    //await insertEmailToDatabase(req.body); // Insert data into the table
+    await insertEmailToDatabase(req.body); // Insert data into the table
     
     // Get all data
     const allEmailsQuery = "SELECT * FROM Emails_tbl_awesome";
@@ -88,9 +105,21 @@ app.post('/', async (req, res) => {
   }
 });
 
-app.get('/', (req, res) => {
+// app.get('/', (req, res) => {
+//   try {
+//     //res.send("ohhhh my!!!");
+//     const emails = await getAllEmails;
+//     console.log('Emails:', emails);
+//   } catch (error) {
+//     console.error('Error handling GET request:', error);
+//     res.status(500).send("Internal Server Error");
+//   }
+// });
+app.get('/', async (req, res) => {
   try {
-    res.send("ohhhh my!!!");
+    const emails = await getAllData();
+    console.log('Emails:', emails);
+    res.send(emails); // Or however you want to format the response
   } catch (error) {
     console.error('Error handling GET request:', error);
     res.status(500).send("Internal Server Error");
