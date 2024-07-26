@@ -10,7 +10,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 const corsOptions = {
-  origin: 'project-awesome-client.vercel.app', // Replace with your allowed origin or use a function for dynamic configuration
+  origin: 'https://www.winkywebus.online', // Replace with your allowed origin or use a function for dynamic configuration
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true, // Enable credentials (cookies, HTTP authentication) across domains
   optionsSuccessStatus: 204, // Set the response status for successful preflight requests
@@ -68,58 +68,28 @@ async function deleteTable() {
     console.error('Error deleting table:', err);
   }
 }
-
-
-
-async function getAllData() {
-  try {
-    const getAllDataQuery = 'SELECT * FROM Emails_tbl_awesome';
-    const result = await client.query(getAllDataQuery);
-    return result.rows; // Return all rows from the query result
-  } catch (err) {
-    console.error('Error retrieving data:', err);
-    throw err;
-  }
-}
-
-
-
-
 // Routes
-app.post('/', async (req, res) => {
-  try {
-    //deleteTable()
-   await createTable(); // Ensure the table exists
-   // await insertEmailToDatabase(req.body); // Insert data into the table
-    
-    // Get all data
-    const allEmailsQuery = "SELECT * FROM Emails_tbl_awesome";
-    const result = await client.query(allEmailsQuery);
-    console.log(result.rows); // Log retrieved data
-    
-    // Send response
-    res.status(201).json(result.rows);
-  } catch (error) {
-    console.error('Error handling POST request:', error);
-    res.status(500).json({ message: "Internal Server Error" });
-  }
-});
-
-// app.get('/', (req, res) => {
+// app.post('/', async (req, res) => {
 //   try {
-//     //res.send("ohhhh my!!!");
-//     const emails = await getAllEmails;
-//     console.log('Emails:', emails);
+//    // deleteTable()
+//    await createTable(); // Ensure the table exists
+//     await insertEmailToDatabase(req.body); // Insert data into the table
+    
+//     // Get all data
+//     const allEmailsQuery = "SELECT * FROM Emails_tbl_awesome";
+//     const result = await client.query(allEmailsQuery);
+    
+//     // Send response
+//     res.status(201).json(result.rows);
 //   } catch (error) {
-//     console.error('Error handling GET request:', error);
-//     res.status(500).send("Internal Server Error");
+//     console.error('Error handling POST request:', error);
+//     res.status(500).json({ message: "Internal Server Error" });
 //   }
 // });
-app.get('/', async (req, res) => {
+
+app.get('/', (req, res) => {
   try {
-    const emails = await getAllData();
-    console.log('Emails:', emails);
-    res.send(emails); // Or however you want to format the response
+    res.send("ohhhh my!!!");
   } catch (error) {
     console.error('Error handling GET request:', error);
     res.status(500).send("Internal Server Error");
